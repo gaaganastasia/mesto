@@ -8,7 +8,7 @@
 
 **Ссылка на сайт**
 
-* [Ссылка на сайт](https://github.com/gaaganastasia/mesto.git)
+* [Ссылка на сайт](https://gaaganastasia.github.io/mesto/)
 
 
 **О проекте**
