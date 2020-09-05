@@ -1,0 +1,12 @@
+.popup__title {
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
