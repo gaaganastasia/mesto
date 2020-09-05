@@ -10,4 +10,8 @@
   .element__like {
     cursor: pointer;
   }
+  
+  .element__like:hover {
+    opacity: 0.6;
+  }
 }
