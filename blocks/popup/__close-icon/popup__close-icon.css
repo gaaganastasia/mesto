@@ -1,18 +1,26 @@
 .popup__close-icon {
-  background-image: url(../../../images/close-icon.png);
+  background-image: url(../../../images/close-icon.svg);
   width: 41px;
   height: 41px;
   background-size: contain;
-  position: absolute;
-  top: -41px;
-  right: -41px;
-  cursor: pointer;
   border: none;
   background-color: rgba(0, 0, 0, .0);
+  outline: 0;
 }
 
 @media screen and (min-width: 920px) {
   .popup__close-icon:hover {
     opacity: 0.6;
+  }
+
+  .popup__close-icon {
+    transform: translate(388px, -36px);
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .popup__close-icon {
+    transform: translate(216px, -36px);
   }
 }

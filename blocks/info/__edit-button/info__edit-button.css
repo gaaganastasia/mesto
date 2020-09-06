@@ -5,6 +5,7 @@
   border: 1px solid #ffffff;
   box-sizing: border-box;
   align-self: center;
+  outline: 0;
 }
 
 @media screen and (min-width: 920px) {

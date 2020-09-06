@@ -4,8 +4,9 @@
 
 @media screen and (max-width: 920px) {
   .header {
-    width: 100%;
+    width: calc(100% - 27px);
     margin-top: 28px;
+    padding-left: 27px;
   }
 }
 

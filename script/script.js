@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup'); 
 const editButton = document.querySelector('.info__edit-button');
 const closeIcon = document.querySelector('.popup__close-icon');
 
