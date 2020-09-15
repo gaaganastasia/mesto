@@ -5,6 +5,7 @@
   width: 21px;
   border: none;
   outline: 0;
+  align-self: center;
 }
 
 @media screen and (min-width: 1024px) {
