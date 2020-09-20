@@ -3,9 +3,13 @@
   width: 41px;
   height: 41px;
   background-size: contain;
+  padding: 0;
   border: none;
   background-color: rgba(0, 0, 0, .0);
   outline: 0;
+  position: absolute;
+  top: -38px;
+  right: -38px;
 }
 
 @media screen and (min-width: 920px) {
@@ -14,13 +18,6 @@
   }
 
   .popup__close-icon {
-    transform: translate(388px, -36px);
     cursor: pointer;
-  }
-}
-
-@media screen and (max-width: 920px) {
-  .popup__close-icon {
-    transform: translate(216px, -36px);
   }
 }
