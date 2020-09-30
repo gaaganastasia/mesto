@@ -73,16 +73,38 @@ initialCards.forEach(function (card) {
   uploadCard(card.link, card.name);
 });
 
+
 // универсальная ф-я открытия попапа
 function openPopup(popup) {
+  openedPopup = popup;
   popup.classList.add('popup_opened');
+  
+  document.addEventListener('keydown', handleEscClose);  //добавляем слушатели
+  document.addEventListener('click', handleOverlayClose);
 }
 
 // универсальная ф-я закрытия попапа
 function closePopup(popup) {
+  openedPopup = popup;
   popup.classList.remove('popup_opened');
+  
+  document.addEventListener('keydown', handleEscClose);  //удаляем слушатели
+  document.addEventListener('click', handleOverlayClose);
 }
 
+// ф-я закрытия попапа на esc
+function handleEscClose(evt) {
+  if (evt.keyCode == 27) {
+    closePopup(openedPopup);
+  };
+}
+
+// закрытие попапа на оверлей
+function handleOverlayClose(evt) {
+  if (evt.target.classList.contains('popup')) {
+    closePopup(openedPopup);
+  }
+}
 
 // создаём новую карточку
 popupAddContainer.addEventListener('submit', function (evt) { 
