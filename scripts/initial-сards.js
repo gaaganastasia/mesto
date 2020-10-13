@@ -1,4 +1,4 @@
-const initialCards = [ //первоначальный набор карточек на странице
+export const initialCards = [ //первоначальный набор карточек на странице
   {
       name: 'Neon',
       link: 'https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=823&q=80'

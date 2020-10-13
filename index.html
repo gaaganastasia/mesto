@@ -27,7 +27,7 @@
       </div>
       <button type="button" class="profile__add-button"></button>
     </section>
-    <template class="template-card">
+    <template id="card" class="template-card">
       <div class="elements__element element">
         <img src="" alt="Фото" class="element__image">
         <button type="button" class="element__delete"></button>
@@ -43,37 +43,37 @@
     </footer>
     <div class="popup popup-form popup-edit">
       <form method="get" action="index.html" name="profile-change" class="popup-form__container popup-edit__container" novalidate>
-        <button type="reset" class="popup__close-icon popup-form__close-icon popup-edit__close-icon"></button>
-        <h2 class="popup-form__header popup-edit__header">Редактировать профиль</h2>
+        <button type="reset" class="popup__reset popup-edit__reset"></button>
+        <h2 class="popup-form__header">Редактировать профиль</h2>
         <label class="popup-form__field">
-          <input name="profile-change" type="text" minlength="2" maxlength="40" placeholder="Имя" value="" id="profile-name-input" class="popup-form__form popup-edit__form popup-edit__form_title" required>
+          <input name="profile-change" type="text" minlength="2" maxlength="40" placeholder="Имя" value="" id="profile-name-input" class="popup-form__input popup-edit__input_name" required>
           <span class='popup-form__input-error' id='profile-name-input-error'></span>
         </label>
         <label class="popup-form__field">
-          <input name="profile-change" type="text" minlength="2" maxlength="200" placeholder="Профессия" value="" id="profile-job-input" class="popup-form__form popup-edit__form popup-edit__form_subtitle" required>
+          <input name="profile-change" type="text" minlength="2" maxlength="200" placeholder="Профессия" value="" id="profile-job-input" class="popup-form__input popup-edit__input_job" required>
           <span class='popup-form__input-error' id='profile-job-input-error'></span>
         </label>
-        <button type="submit" class="popup-form__submit popup-form__save-button popup-edit__save-button">Сохранить</button>
+        <button type="submit" class="popup-form__submit">Сохранить</button>
       </form>
     </div>
     <div class="popup popup-form popup-add">
       <form method="get" action="index.html" name="card-add" class="popup-form__container popup-add__container" novalidate>
-        <button type="reset" class="popup__close-icon popup-form__close-icon popup-add__close-icon"></button>
-        <h2 class="popup-form__header popup-add__header">Новое место</h2>
+        <button type="reset" class="popup__reset popup-add__reset"></button>
+        <h2 class="popup-form__header">Новое место</h2>
         <label class="popup-form__field">
-          <input name="card-add" type="text" minlength="2" maxlength="30" placeholder="Название" value="" id="card-title-input" class="popup-form__form popup-add__form popup-add__form_title" required>
+          <input name="card-add" type="text" minlength="2" maxlength="30" placeholder="Название" value="" id="card-title-input" class="popup-form__input popup-add__input_title" required>
           <span class='popup-form__input-error' id='card-title-input-error'></span>
         </label>
         <label class="popup-form__field">
-          <input name="card-add" type="url" placeholder="Ссылка на картинку" value="" id="card-url-input" class="popup-form__form popup-add__form popup-add__form_subtitle" required>
+          <input name="card-add" type="url" placeholder="Ссылка на картинку" value="" id="card-url-input" class="popup-form__input popup-add__input_url" required>
           <span class='popup-form__input-error' id='card-url-input-error'></span>
         </label>
-        <button type="submit" class="popup-form__submit popup-form__save-button popup-add__save-button">Сохранить</button>
+        <button type="submit" class="popup-form__submit">Сохранить</button>
       </form>
     </div>
     <div class="popup popup-img">
       <div class="popup-img__container">
-        <button type="button" class="popup__close-icon popup-img__close-icon"></button>
+        <button type="reset" class="popup__reset popup-img__reset"></button>
         <figure class="popup-img__figure">
           <img src="" alt="Фото" class="popup-img__image">
           <figcaption class="popup-img__caption"></figcaption>
@@ -81,8 +81,6 @@
       </div>
     </div>
   </div>
-  <script src="./scripts/initial-сards.js"></script>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/validate.js"></script>
+  <script type="module" src="./scripts/index.js"></script>
 </body>
 </html>
