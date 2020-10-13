@@ -1,20 +1,20 @@
 export class FormValidator {
-  constructor(formElement, validation) {
-    this._validation = validation;
+  constructor(formConfig, formElement) {
+    this._formConfig = formConfig;
     this._formElement = formElement;
   }
 
   _showInputError(inputElement, errorMessage) { 
     this._errorElement = this._formElement.querySelector(`#${inputElement.id}-error`); 
-    inputElement.classList.add(this._validation['inputTypeError']); 
+    inputElement.classList.add(this._formConfig['inputTypeError']); 
     this._errorElement.textContent = errorMessage; 
-    this._errorElement.classList.add(this._validation['inputErrorActive']); 
+    this._errorElement.classList.add(this._formConfig['inputErrorActive']); 
   }; 
 
   _hideInputError(inputElement) { 
     this._errorElement = this._formElement.querySelector(`#${inputElement.id}-error`); 
-    inputElement.classList.remove(this._validation['inputTypeError']); 
-    this._errorElement.classList.remove(this._validation['inputErrorActive']); 
+    inputElement.classList.remove(this._formConfig['inputTypeError']); 
+    this._errorElement.classList.remove(this._formConfig['inputErrorActive']); 
     this._errorElement.textContent = ''; 
   };
 
@@ -27,8 +27,8 @@ export class FormValidator {
   };
 
   enableValidation() { 
-    this._inputList = Array.from(this._formElement.querySelectorAll(this._validation['formInput'])); 
-    this._buttonElement = this._formElement.querySelector(this._validation['formSubmit']); 
+    this._inputList = Array.from(this._formElement.querySelectorAll(this._formConfig['formInput'])); 
+    this._buttonElement = this._formElement.querySelector(this._formConfig['formSubmit']); 
    
     this._toggleButtonState(this._inputList, this._buttonElement); 
    
@@ -48,10 +48,10 @@ export class FormValidator {
 
   _toggleButtonState(inputList, buttonElement) { 
     if (this._hasInvalidInput(inputList)) { 
-      buttonElement.classList.add(this._validation['buttonDisabled']); 
+      buttonElement.classList.add(this._formConfig['buttonDisabled']); 
       buttonElement.setAttribute('disabled', true); 
     } else { 
-      buttonElement.classList.remove(this._validation['buttonDisabled']); 
+      buttonElement.classList.remove(this._formConfig['buttonDisabled']); 
       buttonElement.removeAttribute('disabled'); 
     }  
   } 

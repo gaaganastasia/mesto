@@ -1,20 +1,17 @@
 export class Card {
-  constructor(cardTitle, cardSrc, cardTemplate, openPopup, closePopup, popupImg, popupImgCaption, popupImgPhoto) {
+  constructor({cardTitle, cardSrc, cardTemplate, openPopup, popupImg, popupImgCaption, popupImgPhoto}) {
     this._title = cardTitle;
     this._src = cardSrc;
     
     this._card = cardTemplate.cloneNode(true);
 
     this._card.querySelector('.element__title').textContent = this._title;
-    this._cardImage = this._card.querySelector('.element__image');
-    this._cardImage.setAttribute('src', this._src);
 
     this._popupImg = popupImg;
     this._popupImgCaption = popupImgCaption;
     this._popupImgPhoto = popupImgPhoto;
 
     this._openPopup = openPopup;
-    this._closePopup = closePopup;
   }
 
   _setEventListeners() { // слушатели
@@ -44,7 +41,12 @@ export class Card {
   }
 
   generateCard() {
+    this._cardImage = this._card.querySelector('.element__image');
+    this._cardImage.setAttribute('src', this._src);
+    this._cardImage.setAttribute('alt', this._title);
+
     this._setEventListeners();
+
     return this._card;
   }
 }

@@ -5,7 +5,7 @@ import {Card} from './Card.js';
 const cardTemplate = document.querySelector('.template-card').content;
 const cardsContainer = document.querySelector('.elements');
 
-const validation = {
+const formConfig = {
   form: '.popup-form__container',
   formInput: '.popup-form__input',
   inputTypeError: 'popup-form__input_type_error',
@@ -14,7 +14,7 @@ const validation = {
   buttonDisabled: 'popup-form__submit_disabled'
 };
 
-const formElement = document.querySelectorAll(validation['form']);
+const formElements = document.querySelectorAll(formConfig['form']);
 
 const popupAdd = document.querySelector('.popup-add');
 const popupAddOpenButton = document.querySelector('.profile__add-button');
@@ -37,12 +37,14 @@ const popupEditJobInput = document.querySelector('.popup-edit__input_job');
 const nameInfo = document.querySelector('.info__title');
 const jobInfo = document.querySelector('.info__subtitle');
 
+const escapeCode = 27;
+
 let openedPopup;
 
 
 
 function renderCard(cardTitle, cardSrc) {
-  const card = new Card(cardTitle, cardSrc, cardTemplate, openPopup, closePopup, popupImg, popupImgCaption, popupImgPhoto);
+  const card = new Card({cardTitle, cardSrc, cardTemplate, openPopup, popupImg, popupImgCaption, popupImgPhoto});
   // отображаем на странице
   prependCard(card.generateCard());
 };
@@ -57,9 +59,9 @@ initialCards.forEach(function(item) {
 });
 
 //валидация
-formElement.forEach((formElement) => {
-  const FormVal = new FormValidator(formElement, validation);
-  FormVal.enableValidation();
+formElements.forEach((formElement) => {
+  const formVal = new FormValidator(formConfig, formElement);
+  formVal.enableValidation();
 });
 
 // универсальная ф-я открытия попапа 
@@ -82,7 +84,7 @@ function closePopup(popup) {
  
 // ф-я закрытия попапа на esc 
 function handleEscClose(evt) { 
-  if (evt.keyCode == 27) {
+  if (evt.keyCode == escapeCode) {
     closePopup(openedPopup); 
   }; 
 } 
