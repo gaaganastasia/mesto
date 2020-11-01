@@ -8,11 +8,18 @@ import {UserInfo} from './components/UserInfo.js';
 import {PopupWithImage} from './components/PopupWithImage.js';
 import {PopupWithForm} from './components/PopupWithForm.js';
 
-import { cardTemplate, cardsContainer, formConfig, popupAdd, popupAddOpenButton, popupAddContainer, popupImg, popupImgCaption, popupImgPhoto, popupEdit, popupEditContainer, popupEditJobInput, popupEditNameInput, popupEditOpenButton, infoSelectors, cardInputSelectors } from './utils/constants.js';
+import { 
+  cardTemplate,
+  formConfig,
+  popupEditJobInput,
+  popupEditNameInput,
+  infoSelectors,
+  cardInputSelectors
+} from './utils/constants.js';
 
 /////////////////классы
 
-const popupWithImg = new PopupWithImage(popupImg, popupImgCaption, popupImgPhoto);
+const popupWithImg = new PopupWithImage(document.querySelector('.popup-img'), document.querySelector('.popup-img__caption'), document.querySelector('.popup-img__image'));
 const profileInfo = new UserInfo(infoSelectors);
 
 //валидация
@@ -21,13 +28,13 @@ const validateForm = (formElement) => {
   formVal.enableValidation();
 }
 
-const popupEditForm = new PopupWithForm(popupEdit, (evt) => {
+const popupEditForm = new PopupWithForm(document.querySelector('.popup-edit'), (evt) => {
   evt.preventDefault();
   profileInfo.setUserInfo(popupEditNameInput.value, popupEditJobInput.value);
   popupEditForm.close();
 });
 
-const popupAddForm = new PopupWithForm(popupAdd, (evt) => {
+const popupAddForm = new PopupWithForm(document.querySelector('.popup-add'), (evt) => {
   evt.preventDefault();
   const inputValues = popupAddForm._getInputValues(cardInputSelectors);
   const cardTitle = inputValues.titleValue;
@@ -50,7 +57,7 @@ const cardList = new Section({
     const card = new Card({cardTitle, cardSrc, cardTemplate}, handleCardClick);
     cardList.addItem(card.generateCard());
   }
-}, cardsContainer);
+}, document.querySelector('.elements'));
 
 cardList.renderItems();
 
@@ -62,16 +69,16 @@ function handleCardClick(evt) {
 
 //////////// слушатели
 
-popupEditOpenButton.addEventListener('click', () => { //открытие popup-edit
+document.querySelector('.info__edit-button').addEventListener('click', () => { //открытие popup-edit
   popupEditForm.open();
-  validateForm(popupEditContainer);
+  validateForm(document.querySelector('.popup-edit__container'));
 
   popupEditNameInput.value = profileInfo.getUserInfo().userName;
   popupEditJobInput.value = profileInfo.getUserInfo().userInfo;
 });
 
 
-popupAddOpenButton.addEventListener('click', () => { // открытие popup-add
+document.querySelector('.profile__add-button').addEventListener('click', () => { // открытие popup-add
   popupAddForm.open();
-  validateForm(popupAddContainer);
+  validateForm(document.querySelector('.popup-add__container'));
 });
