@@ -9,6 +9,7 @@ export const formConfig = {
   buttonDisabled: 'popup-form__submit_disabled'
 };
 
+export const formAdd = document.querySelector('.popup-add__container');
 export const popupEditOpenButton = document.querySelector('.info__edit-button');
 export const popupEditNameInput = document.querySelector('.popup-edit__input_name');
 export const popupEditJobInput = document.querySelector('.popup-edit__input_job');
