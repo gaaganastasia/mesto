@@ -6,7 +6,7 @@ export class PopupWithForm extends Popup {
     this._submit = submitFunc;
   }
 
-  _getInputValues(inputSelectors) {
+  getInputValues(inputSelectors) {
     const titleValue = inputSelectors.title.value;
     const srcValue = inputSelectors.src.value;
     const inputValues = {titleValue, srcValue};

@@ -1,5 +1,3 @@
-import { escapeCode } from '../utils/constants.js';
-
 export class Popup {
   constructor(popupSelector) {
     this._popup = popupSelector;
@@ -22,7 +20,7 @@ export class Popup {
   }
 
   _handleEscClose(evt) {
-    if (evt.keyCode === escapeCode) {
+    if (evt.keyCode === 27) {
       this.close(); 
     }; 
   }

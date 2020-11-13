@@ -17,7 +17,10 @@
     <main class="main">
     <section class="profile">
       <div class="profile__form">
-        <div class="profile__image"></div>
+        <div class="profile__image-container">
+          <img src="https://sun1.sibirix.userapi.com/c850624/v850624612/e56dd/Ac4jZFVXnJc.jpg" alt="Аватар профиля" class="profile__image">
+          <div class="profile__image-overlay"></div>
+        </div>
         <div class="profile__info info">
           <h1 class="info__title">Жак-Ив Кусто</h1>
           <button type="button" class="info__edit-button"></button>
@@ -31,7 +34,10 @@
         <img src="./images/logo.svg" alt="Фото" class="element__image">
         <button type="button" class="element__delete"></button>
         <h3 class="element__title"></h3>
-        <button type="button" class="element__like"></button>
+        <div class="element__like-container">
+          <button type="button" class="element__like"></button>
+          <p class="element__like-counter"></p>
+        </div>
       </div>
     </template>
     <section class="elements">
@@ -67,7 +73,7 @@
           <input name="card-add" type="url" placeholder="Ссылка на картинку" value="" id="card-url-input" class="popup-form__input popup-add__input_url" required>
           <span class='popup-form__input-error' id='card-url-input-error'></span>
         </label>
-        <button type="submit" class="popup-form__submit">Сохранить</button>
+        <button type="submit" class="popup-form__submit">Создать</button>
       </form>
     </div>
     <div class="popup popup-img">
@@ -78,6 +84,24 @@
           <figcaption class="popup-img__caption"></figcaption>
         </figure>
       </div>
+    </div>
+    <div class="popup popup-form popup-delete">
+      <form method="get" action="index.html" name="card-delete" class="popup-form__container popup-delete__container" novalidate>
+        <button type="reset" class="popup__reset popup-delete__reset"></button>
+        <h2 class="popup-delete__header">Вы уверены?</h2>
+        <button type="submit" class="popup-form__submit">Да</button>
+      </form>
+    </div>
+    <div class="popup popup-form popup-edit-avatar">
+      <form method="get" action="index.html" name="profile-avatar-change" class="popup-form__container popup-edit-avatar__container" novalidate>
+        <button type="reset" class="popup__reset popup-edit-avatar__reset"></button>
+        <h2 class="popup-form__header">Обновить аватар</h2>
+        <label class="popup-form__field">
+          <input name="profile-avatar-change" type="url" placeholder="Ссылка" value="" id="url-input" class="popup-form__input popup-edit-avatar__input" required>
+          <span class='popup-form__input-error' id='url-input-error'></span>
+        </label>
+        <button type="submit" class="popup-form__submit">Сохранить</button>
+      </form>
     </div>
   </div>
 </body>
