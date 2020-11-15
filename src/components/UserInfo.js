@@ -13,7 +13,7 @@ export class UserInfo {
   }
 
   getUserAvatar() {
-    return userAvatar = this._userAvatar.src;
+    return (userAvatar = this._userAvatar.src);
   }
 
   setUserInfo(userNameValue, userInfoValue) {
@@ -22,6 +22,6 @@ export class UserInfo {
   }
 
   setUserAvatar(avatarLink) {
-    this._userAvatar.setAttribute('src', avatarLink);
+    this._userAvatar.setAttribute("src", avatarLink);
   }
 }

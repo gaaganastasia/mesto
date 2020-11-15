@@ -1,4 +1,4 @@
-import {Popup} from './Popup.js';
+import { Popup } from "./Popup.js";
 
 export class PopupWithImage extends Popup {
   constructor(popupSelector, popupImgCaption, popupImgPhoto) {
@@ -12,8 +12,8 @@ export class PopupWithImage extends Popup {
     const src = cardSrc;
 
     this._caption.textContent = title;
-    this._photo.setAttribute('src', src);
-    this._photo.setAttribute('alt', src);
+    this._photo.setAttribute("src", src);
+    this._photo.setAttribute("alt", src);
 
     super.open();
   }
