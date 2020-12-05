@@ -9,6 +9,7 @@
   font-family: Inter, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-appearance: none;
 }
 
 @media screen and (max-width: 920px) {
