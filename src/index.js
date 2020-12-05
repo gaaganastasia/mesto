@@ -37,12 +37,12 @@ const popupEditForm = new PopupWithForm(
   (evt) => {
     evt.preventDefault();
     renderLoading(true, "Сохранить");
-    profileInfo.setUserInfo(popupEditNameInput.value, popupEditJobInput.value);
 
     //отправляем новую инфу профиля на сервер
     api
       .setProfileInfo(popupEditNameInput.value, popupEditJobInput.value)
       .then(() => {
+        profileInfo.setUserInfo(popupEditNameInput.value, popupEditJobInput.value);
         popupEditForm.close();
       })
       .finally(() => {
@@ -56,11 +56,11 @@ const popupEditAvatar = new PopupWithForm(
   (evt) => {
     evt.preventDefault();
     renderLoading(true, "Сохранить");
-    profileInfo.setUserAvatar(popupEditAvatarInput.value);
 
     api
       .setProfileAvatar(popupEditAvatarInput.value)
       .then(() => {
+        profileInfo.setUserAvatar(popupEditAvatarInput.value);
         popupEditAvatar.close();
       })
       .finally(() => {
@@ -129,14 +129,13 @@ const popupAddForm = new PopupWithForm(
       .createNewCard(cardTitle, cardSrc)
       .then((data) => {
         createCard(data);
+        cardInputSelectors.title.value = "";
+        cardInputSelectors.src.value = "";
         popupAddForm.close();
       })
       .finally(() => {
         renderLoading(false, "Создать");
       });
-
-    cardInputSelectors.title.value = "";
-    cardInputSelectors.src.value = "";
   }
 );
 
