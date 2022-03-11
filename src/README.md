@@ -1,4 +1,5 @@
 # Проект 4: Место
+[Ссылка на сайт](https://gaaganastasia.github.io/mesto/)
 
 ### Технологии в проекте:
 
@@ -7,11 +8,6 @@
 * Webpack
 * ООП
 * API
-
-
-**Ссылка на сайт**
-
-* [Ссылка на сайт](https://gaaganastasia.github.io/mesto/)
 
 
 **О проекте**
